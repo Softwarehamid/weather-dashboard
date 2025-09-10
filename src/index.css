@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #root { 
+  height: 100%; 
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Smooth font rendering */
+body { 
+  @apply antialiased;
+}
+
+/* Custom component classes */
+.card { 
+  @apply rounded-2xl shadow-soft bg-white/90 dark:bg-slate-800/70 backdrop-blur-sm border border-white/20 dark:border-slate-700/30 p-4 md:p-6 transition-all duration-200;
+}
+
+.card:hover {
+  @apply shadow-lg transform translate-y-[-1px];
+}
+
+.input { 
+  @apply w-full rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 px-4 py-3 text-slate-800 dark:text-slate-200 placeholder-slate-500 dark:placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-400/60 focus:border-blue-400/60 transition-all duration-150;
+}
+
+.btn { 
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-medium bg-blue-600 text-white hover:bg-blue-500 active:translate-y-[1px] transition-all duration-150 shadow-md hover:shadow-lg;
+}
+
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed hover:bg-blue-600 active:translate-y-0;
+}
+
+.btn-ghost { 
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 font-medium bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-700/60 hover:bg-white/90 dark:hover:bg-slate-700/60 active:translate-y-[1px] transition-all duration-150;
+}
+
+.chip { 
+  @apply inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm bg-slate-100/80 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-600/60 cursor-pointer transition-all duration-150 border border-slate-200/40 dark:border-slate-600/40;
+}
+
+.chip:hover {
+  @apply transform translate-y-[-1px] shadow-sm;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply h-5 w-5 rounded-full border-2 border-slate-300 dark:border-slate-600 border-t-blue-500 animate-spin;
+}
+
+/* Weather icon animation */
+.weather-icon {
+  @apply transition-transform duration-300 hover:scale-110;
+}
+
+/* Forecast card animation */
+.forecast-card {
+  @apply rounded-2xl p-3 bg-white/80 dark:bg-slate-700/60 border border-slate-200/60 dark:border-slate-700/60 text-center transition-all duration-200 hover:bg-white/90 dark:hover:bg-slate-700/80 hover:shadow-md hover:transform hover:translate-y-[-2px];
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .temp-display {
+    @apply text-3xl;
+  }
+}
+
+@media (min-width: 641px) {
+  .temp-display {
+    @apply text-4xl;
+  }
+}
